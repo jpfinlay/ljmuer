@@ -1,0 +1,10 @@
+- name: Home
+  link: /
+- name: Start
+  link: /start/start_home.html
+- name: Study
+  link: /study/study_home.html
+- name: Money
+  link: /money/money_home.html
+- name: Future
+  link: /future/future_home.html

@@ -1,11 +1,37 @@
 <!doctype html>
 <html>
   <head>
+    <link rel="stylesheet" type="text/css" href="/assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
     <meta charset="utf-8">
     <title>{{ page.title }}</title>
   </head>
   <body>
-    {% include navigation.html %}
-    {{ content }}
+
+
+    <div class="wrapper">
+      <div class="box header">
+        {% include main-nav.html %}
+      </div>
+      <div class="box sidebar">
+        {% if page.url == "/start/start_home.html" %}
+          {% include start-sidebar.html %}
+        {% elsif page.url == "/study/study_home.html" %}
+          {% include study-sidebar.html %}
+        {% elsif page.url == "/money/money_home.html" %}
+          {% include money-sidebar.html %}
+        {% elsif page.url == "/future/future_home.html" %}
+          {% include future-sidebar.html %}
+        {% else %}
+          {% include default-sidebar.html %}
+        {% endif %}
+      </div>
+      <div class="box content">
+        {{ content }}
+      </div>
+      <div class="box footer">
+        Footer
+      </div>
+    </div>
   </body>
 </html>
